@@ -26,8 +26,7 @@ class Reggie:
         }
         response = requests.post("%s/dataset" % self.api, data=json.dumps(data),
                 headers=headers, auth=self.auth)
-        print(response)
-        print(response.text)
+        print(response.json())
     
     def wipe(self, uuid, **kwargs):
         response = requests.get("%s/dataset/%s/endpoint" % (self.api, uuid))
