@@ -33,3 +33,10 @@ talk to the gbif registry from the command line -
       -u USERNAME, --username USERNAME
       -p PASSWORD, --password PASSWORD
 
+## todo
+
+* better error handling
+* delete datasets
+* tags / machine tags?
+* dataset comments...?
+
