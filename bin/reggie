@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 
 import os
-import sys
 import json
 import argparse
 import requests
@@ -15,10 +14,10 @@ class Reggie:
     def __init__(self, username, password, test):
         self.auth = ( username, password)
         self.api = "https://api.gbif.org/v1"
-        if test:
-            self.api = "https://api.gbif-uat.org/v1"
+        if test: self.api = "https://api.gbif-uat.org/v1"
 
     def create(self, title, type, organization, installation, **kwargs):
+        # doesn't look like the required fields are documented anywhere…
         data = {
             'title': title,
             'type': type,
@@ -55,7 +54,6 @@ class Reggie:
         headers = {"Content-Type": "application/json"}
         response = requests.post("%s/dataset/%s/endpoint" % (self.api, uuid),
                 data=json.dumps(data), headers=headers, auth=self.auth)
-        show(uuid)
 
     def show(self, uuid, **kwargs):
         response = requests.get("%s/dataset/%s/endpoint" % (self.api, uuid))
