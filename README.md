@@ -8,6 +8,10 @@ talk to the gbif registry from the command line -
   * set up a new _endpoint_!
   * _wipe_ endpoints!
 
+## requirements
+
+a python interpreter and the `requests` package (`pip install requests`)
+
 ## usage
 
     $ reggie -h
